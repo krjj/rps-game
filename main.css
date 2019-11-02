@@ -44,6 +44,12 @@ header {
     display: none;
 }
 
+#game-section-3 {
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+
 #game-container {
     display: flex;
     justify-content: space-evenly;

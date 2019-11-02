@@ -12,14 +12,18 @@ var player2_choice = ''
 const playmode_div = document.getElementById("play-mode-section")
 const game_div = document.getElementById("game-section")
 const game2_div = document.getElementById("game-section-2")
+const game3_div = document.getElementById("game-section-3")
 
 const mtpchoices_div = document.getElementById("mtp-choices")
 const mtpresult_div = document.getElementById("mtp-result")
 
 const switchmode_button = document.getElementById("switch-mode")
 const switchmode2_button = document.getElementById("switch-mode-2")
+const switchmode3_button = document.getElementById("switch-mode-3")
+
 const playervscomputer_button = document.getElementById("pvc")
 const playervsplayer_button = document.getElementById("pvp")
+const computervscomputer_button = document.getElementById("cvc")
 
 const rock_button = document.getElementById("rock")
 const paper_button = document.getElementById("paper")
@@ -47,6 +51,9 @@ const playagain_button = document.getElementById("play-again")
 const mtpresult_text = document.getElementById("mtp-result-text")
 const mtpplayagain_button = document.getElementById("mtp-play-again")
 
+const ctpresult_text = document.getElementById("ctp-result-text")
+const ctpplayagain_button = document.getElementById("ctp-play-again")
+
 /* Event Handlers */
 
 playervscomputer_button.onclick = function (e) {
@@ -59,6 +66,12 @@ playervsplayer_button.onclick = function (e) {
     game2_div.style.display = "block";
 }
 
+computervscomputer_button.onclick = function (e) {
+    playmode_div.style.display = "none";
+    game3_div.style.display = "block";
+    computerVscomputer()
+}
+
 switchmode_button.onclick = function (e) {
     playmode_div.style.display = "block";
     game_div.style.display = "none";
@@ -67,7 +80,16 @@ switchmode_button.onclick = function (e) {
 
 switchmode2_button.onclick = function (e) {
     playmode_div.style.display = "block";
+    game_div.style.display = "none";
     game2_div.style.display = "none";
+    game3_div.style.display = "none";
+}
+
+switchmode3_button.onclick = function (e) {
+    playmode_div.style.display = "block";
+    game_div.style.display = "none";
+    game2_div.style.display = "none";
+    game3_div.style.display = "none";
 }
 
 rock_button.onclick = function (e) {
@@ -126,6 +148,10 @@ mtpplayagain_button.onclick = function (e) {
     player2_choice = ""
     mpt1selected_text.style.display = "none"
     mtp2selected_text.style.display = "none"
+}
+
+ctpplayagain_button.onclick = function (e) {
+    computerVscomputer()
 }
 
 /* End of event handler section */
@@ -189,6 +215,24 @@ function playerVsPlayer() {
             mtpresult_text.className = "nes-text is-primary";
             mtpresult_text.innerText = "Nobody wins. Both players have selected " + player1_choice.toUpperCase() + "."
         }
+    }
+}
+
+function computerVscomputer() {
+    var choice1 = objectId[Math.floor(Math.random() * Math.floor(3))]
+    var choice2=objectId[Math.floor(Math.random() * Math.floor(3))]
+    var result = gameEngine(choice1,choice2)
+
+    if (result == 1) {
+        ctpresult_text.innerText = "Computer 1 has won. " + choice1.toUpperCase() + " defeats " + choice2.toUpperCase() + "."
+    }
+
+    if (result == 2) {
+        ctpresult_text.innerText = "Computer 2 has won. " + choice2.toUpperCase() + " defeats " + choice1.toUpperCase() + "."
+    }
+
+    if (result == 0) {
+        ctpresult_text.innerText = "Nobody wins. Both players have selected " + choice1.toUpperCase() + "."
     }
 }
 
