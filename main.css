@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+html, body, pre, code, kbd, samp {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-color: black
+}
+
+header {
+    padding: 1rem;
+    text-align: center;
+    background-color: white
+}
+
+#play-mode-section {
+    padding-top : 2rem;
+}
+
+
+#play-mode-title {
+    padding : 25px;
+    text-align: center;
+    font-size: 20px;
+    animation: blinker 1s linear infinite;
+}
+
+#play-mode-menu-item {
+    padding : 20px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#game-section {
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+
+#game-section-2 {
+    padding: 30px;
+    text-align: center;
+    display: none;
+}
+
+#game-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#mtp-choices {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#result {
+    display: none
+}
+
+#mtp1selected {
+    display: none
+}
+
+#mtp2selected {
+    display: none
+}
+
+#mtp-result{
+    display: none
+}
+
+
+
+@keyframes blinker {
+    20% {
+      opacity: 0;
+    }
+  }
