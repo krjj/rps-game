@@ -33,7 +33,7 @@ node index.js [mode] [choice]
 
 ```
 [mode] = -computerVscomputer | -playerVsComputer
-[choice] = rock | paper | scissor
+[choice] = rock | paper | scissors
 ```
 
 ### Example
