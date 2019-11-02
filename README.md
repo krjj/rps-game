@@ -1,6 +1,8 @@
 # Rock Paper Scissors
 Simple browser based Rock Paper Scissors game. Supports Player Vs Player, Player Vs Computer modes, Computer Vs Computer modes.
 
+![screenshot](https://github.com/krjj/rps-game/blob/master/assets/frame_generic_light.png)
+
 ## Demo
 Visit 👉 https://krjj.github.io/rps-game/
 
